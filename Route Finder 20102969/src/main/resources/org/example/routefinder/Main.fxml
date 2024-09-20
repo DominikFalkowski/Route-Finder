@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1006.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.routefinder.HelloController">
+    <VBox layoutY="745.0" prefHeight="241.0" prefWidth="1020.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="745.0">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="1025.0" text="City Route Finder" />
+        <TextField fx:id="startingPointField" alignment="CENTER" promptText="Enter starting point..." />
+        <TextField fx:id="destinationField" alignment="CENTER" promptText="Enter destination point..." />
+        <ComboBox fx:id="routeTypeComboBox" promptText="Select route type">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Shortest" />
+                    <String fx:value="Cultural" />
+                    <String fx:value="DFS All Routes" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button fx:id="findRouteButton" onAction="#onFindRouteButtonClicked" text="Find Route" />
+    </VBox>
+    <StackPane layoutX="34.0" layoutY="28.0" prefHeight="629.0" prefWidth="991.0">
+        <ImageView fx:id="mapImageView" fitHeight="622.0" fitWidth="991.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../Images/ParisMap2.jpg" />
+        </ImageView>
+    </StackPane>
+</AnchorPane>
